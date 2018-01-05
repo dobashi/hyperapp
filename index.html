@@ -1,5 +1,12 @@
-<body>
+<html>
+<head>
 <script src="hyperappmin.js"></script>
+<style type="text/css">
+.haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
+.vertical { writing-mode : vertical-rl; float: right; }
+</style>
+</heml>
+<body>
 <script>
 
 const { h, app } = hyperapp
@@ -28,9 +35,5 @@ const view = (state, actions) =>
 window.main = app(state, actions, view, document.body)
 
 </script>
-<style type="text/css">
-.haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
-.vertical { writing-mode : vertical-rl; float: right; }
-</style>
-
 </body>
+</html>
