@@ -1,0 +1,36 @@
+<body>
+<script src="hyperappmin.js"></script>
+<script>
+
+const { h, app } = hyperapp
+
+const state = {
+  text1: '1',
+  text2: '2',
+  text3: '3',
+}
+
+const actions = {
+  text: value => state => ({ text1: value[0], text2: value[1], text3: value[2] })
+}
+
+const view = (state, actions) =>
+  h("div", {}, [
+    h("textarea", { id: "area", rows: 5, placeholder: "ここに俳句を入力", onkeydown: ev => actions.text(ev.target.value.split('\n')) }, ""),
+    h("div", { "class":"haiku"},[
+      h("h1", { id: "label1", "class": "vertical" }, state.text1),
+      h("h1", { id: "label2", "class": "vertical" }, state.text2),
+      h("h1", { id: "label3", "class": "vertical" }, state.text3),
+    //h("br"),
+    ]),
+  ])
+
+window.main = app(state, actions, view, document.body)
+
+</script>
+<style type="text/css">
+.haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
+.vertical { writing-mode : vertical-rl; float: right; }
+</style>
+
+</body>
