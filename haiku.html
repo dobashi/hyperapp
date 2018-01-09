@@ -1,11 +1,12 @@
 <html>
 <head>
+    <meta charset="UTF-8">
 <script src="hyperappmin.js"></script>
 <style type="text/css">
 .haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
 .vertical { writing-mode : vertical-rl; float: right; }
 </style>
-</heml>
+</head>
 <body>
 <script>
 
@@ -23,7 +24,7 @@ const actions = {
 
 const view = (state, actions) =>
   h("div", {}, [
-    h("textarea", { id: "area", rows: 5, placeholder: "Haiku", onkeyup: ev => actions.text(ev.target.value.split('\n')) }, ""),
+    h("textarea", { id: "area", rows: 5, placeholder: "ここに俳句を入力", onkeyup: ev => actions.text(ev.target.value.split('\n')) }, ""),
     h("div", { "class":"haiku"},[
       h("h1", { id: "label1", "class": "vertical" }, state.text1),
       h("h1", { id: "label2", "class": "vertical" }, state.text2),

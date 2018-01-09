@@ -1,11 +1,12 @@
 <html>
 <head>
+    <meta charset="UTF-8">
 <script src="hyperappmin.js"></script>
 <style type="text/css">
-.haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
+.target { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
 .result { margin: 10px; }
 </style>
-</heml>
+</head>
 <body>
 <script>
 
@@ -22,8 +23,10 @@ const actions = {
 
 const view = (state, actions) =>
   h("div", {}, [
+    h("label", {} ,"URLエンコードしたい文字列"),
+    h("br"),
     h("textarea", { id: "area", rows: 5, placeholder: "Input URL", onkeyup: ev => actions.text(ev.target.value) }, ""),
-    h("div", { "class":"haiku"},[
+    h("div", { "class":"target"},[
       h("h3", { id: "label", "class": "result" }, state.text),
     //h("br"),
     ]),
