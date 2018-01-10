@@ -28,4 +28,4 @@ const haiku_view = (state, actions) =>
     h("textarea", { "id": "result", "class":"haiku", "rows":10}, state.text),
   ])
 
-let haiku = () => windows.main = app(haiku_state, haiku_actions, haiku_view, byId("contents"))
+let haiku = () => window.main = app(haiku_state, haiku_actions, haiku_view, byId("contents"))
