@@ -6,23 +6,21 @@
 .haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
 .vertical { writing-mode : vertical-rl; float: right; }
 </style>
-</head>
-<body>
 <script>
 
 const { h, app } = hyperapp
 
-const state = {
+const haiku_state = {
   text1: '1',
   text2: '2',
   text3: '3',
 }
 
-const actions = {
-  text: value => state => ({ text1: value[0], text2: value[1], text3: value[2] })
+const haiku_actions = {
+  text: value =>haiku_state => ({ text1: value[0], text2: value[1], text3: value[2] })
 }
 
-const view = (state, actions) =>
+const haiku_view = (state, actions) =>
   h("div", {}, [
     h("textarea", { id: "area", rows: 5, placeholder: "ここに俳句を入力", onkeyup: ev => actions.text(ev.target.value.split('\n')) }, ""),
     h("div", { "class":"haiku"},[
@@ -33,8 +31,30 @@ const view = (state, actions) =>
     ]),
   ])
 
-window.main = app(state, actions, view, document.body)
+  
+</script>
+</head>
+<bodey>
+<main>
+  <div>
+    <textarea>
 
+    </textarea>
+    <div>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+    </div>
+  </div>
+  <div>------------</div>
+  <div id="contents">contents</div>
+
+</main>
+<script>
+main = app(state, actions, view, document.getElementById("contents"))
+//document.body.main)
+  console.log("d.b.main:"+document.body)
+console.log("main:"+main)
 </script>
 </body>
 </html>
