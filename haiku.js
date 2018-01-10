@@ -12,8 +12,8 @@ const haiku_actions = {
   vert: value => haiku_state => ({ text: value})
 }
 
-var length = value => value==undefined?0:String(value).length
-var charAt = (value, index) =>value==undefined?'　':length(value)<=index?'　':String(value).charAt(index)
+let length = value => value==undefined?0:String(value).length
+let charAt = (value, index) =>value==undefined?'　':length(value)<=index?'　':String(value).charAt(index)
 // function length(value){
   // return value == undefined?0:String(value).length
 // }
