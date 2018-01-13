@@ -34,15 +34,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <!--  ### hyperapp ### -->
-  <script src="hyperappmin.js"></script>
-  <script src="haiku.js"></script>
+  <script src="js/hyperappmin.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/haiku.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/haiku.css">
+  <script src="js/urlencode.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/urlencode.css">
   <!-- haiku css -->
   <style type="text/css">
-  .haiku { margin-right: auto; clear: left; width: 300; margin-top: 50px;}
-  .vertical { writing-mode : vertical-rl; float: right; }
+
   </style>
   <script>
-    var byId = value => document.getElementById(value)
   </script>
   <!--  ### hyperapp ### -->
 </head>
@@ -273,7 +275,7 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="javascript:haiku()"><i class="fa fa-link"></i> <span>Haiku</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="javascript:urlencoder()"><i class="fa fa-link"></i> <span>UrlEncoder</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

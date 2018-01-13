@@ -1,11 +1,9 @@
-const { h, app } = hyperapp
-
 const haiku_state = {
   text: 'vert',
 }
 
 const haiku_actions = {
-  vert: value => haiku_state => ({ text: value})
+  vertical: value => haiku_state => ({ text: value})
 }
 
 let length = value => value==undefined?0:String(value).length
@@ -18,14 +16,15 @@ function convert(value){
       result += charAt(lines[2],i) +charAt(lines[1],i) + charAt(lines[0],i) + '\n' 
   }
   // console.log(lines[0])
+  console.log("convert:"+result)
   return result
 }
 
-const haiku_view = (state, actions) =>
-  h("div", {}, [
-    h("textarea", { id: "area", rows: 5, placeholder: "ここに俳句を入力", onkeyup: ev => actions.vert(convert(ev.target.value)) }, ""),
+const haiku_view = (haiku_state, haiku_actions) =>
+  h("div", { id: "haiku" }, [
+    h("textarea", { id: "haiku_area", rows: 5, placeholder: "ここに俳句を入力", onkeyup: ev => haiku_actions.vertical(convert(ev.target.value)) }, ""),
     h("hr"),
-    h("textarea", { "id": "result", "class":"haiku", "rows":10}, state.text),
+    h("textarea", { id: "result", class:"haiku", rows:10 }, haiku_state.text),
   ])
 
 let haiku = () => window.main = app(haiku_state, haiku_actions, haiku_view, byId("contents"))
